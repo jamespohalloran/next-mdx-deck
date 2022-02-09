@@ -67,8 +67,8 @@ export type Query = {
   getDocument: DocumentNode;
   getDocumentList: DocumentConnection;
   getDocumentFields: Scalars['JSON'];
-  getPostsDocument: PostsDocument;
-  getPostsList: PostsConnection;
+  getSlidesDocument: SlidesDocument;
+  getSlidesList: SlidesConnection;
 };
 
 
@@ -96,12 +96,12 @@ export type QueryGetDocumentListArgs = {
 };
 
 
-export type QueryGetPostsDocumentArgs = {
+export type QueryGetSlidesDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPostsListArgs = {
+export type QueryGetSlidesListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
@@ -142,35 +142,34 @@ export type CollectionDocumentsArgs = {
   last?: InputMaybe<Scalars['Float']>;
 };
 
-export type DocumentNode = PostsDocument;
+export type DocumentNode = SlidesDocument;
 
-export type Posts = {
-  __typename?: 'Posts';
-  title?: Maybe<Scalars['String']>;
-  body?: Maybe<Scalars['String']>;
+export type Slides = {
+  __typename?: 'Slides';
+  body?: Maybe<Scalars['JSON']>;
 };
 
-export type PostsDocument = Node & Document & {
-  __typename?: 'PostsDocument';
+export type SlidesDocument = Node & Document & {
+  __typename?: 'SlidesDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
-  data: Posts;
+  data: Slides;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
   dataJSON: Scalars['JSON'];
 };
 
-export type PostsConnectionEdges = {
-  __typename?: 'PostsConnectionEdges';
+export type SlidesConnectionEdges = {
+  __typename?: 'SlidesConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PostsDocument>;
+  node?: Maybe<SlidesDocument>;
 };
 
-export type PostsConnection = Connection & {
-  __typename?: 'PostsConnection';
+export type SlidesConnection = Connection & {
+  __typename?: 'SlidesConnection';
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Float'];
-  edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<SlidesConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -178,8 +177,8 @@ export type Mutation = {
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   createDocument: DocumentNode;
-  updatePostsDocument: PostsDocument;
-  createPostsDocument: PostsDocument;
+  updateSlidesDocument: SlidesDocument;
+  createSlidesDocument: SlidesDocument;
 };
 
 
@@ -204,49 +203,47 @@ export type MutationCreateDocumentArgs = {
 };
 
 
-export type MutationUpdatePostsDocumentArgs = {
+export type MutationUpdateSlidesDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PostsMutation;
+  params: SlidesMutation;
 };
 
 
-export type MutationCreatePostsDocumentArgs = {
+export type MutationCreateSlidesDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PostsMutation;
+  params: SlidesMutation;
 };
 
 export type DocumentMutation = {
-  posts?: InputMaybe<PostsMutation>;
+  slides?: InputMaybe<SlidesMutation>;
 };
 
-export type PostsMutation = {
-  title?: InputMaybe<Scalars['String']>;
-  body?: InputMaybe<Scalars['String']>;
+export type SlidesMutation = {
+  body?: InputMaybe<Scalars['JSON']>;
 };
 
-export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null, body?: string | null };
+export type SlidesPartsFragment = { __typename?: 'Slides', body?: any | null };
 
-export type GetPostsDocumentQueryVariables = Exact<{
+export type GetSlidesDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPostsDocumentQuery = { __typename?: 'Query', getPostsDocument: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null, body?: string | null } } };
+export type GetSlidesDocumentQuery = { __typename?: 'Query', getSlidesDocument: { __typename?: 'SlidesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Slides', body?: any | null } } };
 
-export type GetPostsListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetSlidesListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsListQuery = { __typename?: 'Query', getPostsList: { __typename?: 'PostsConnection', totalCount: number, edges?: Array<{ __typename?: 'PostsConnectionEdges', node?: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null, body?: string | null } } | null } | null> | null } };
+export type GetSlidesListQuery = { __typename?: 'Query', getSlidesList: { __typename?: 'SlidesConnection', totalCount: number, edges?: Array<{ __typename?: 'SlidesConnectionEdges', node?: { __typename?: 'SlidesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Slides', body?: any | null } } | null } | null> | null } };
 
-export const PostsPartsFragmentDoc = gql`
-    fragment PostsParts on Posts {
-  title
+export const SlidesPartsFragmentDoc = gql`
+    fragment SlidesParts on Slides {
   body
 }
     `;
-export const GetPostsDocumentDocument = gql`
-    query getPostsDocument($relativePath: String!) {
-  getPostsDocument(relativePath: $relativePath) {
+export const GetSlidesDocumentDocument = gql`
+    query getSlidesDocument($relativePath: String!) {
+  getSlidesDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -257,14 +254,14 @@ export const GetPostsDocumentDocument = gql`
     }
     id
     data {
-      ...PostsParts
+      ...SlidesParts
     }
   }
 }
-    ${PostsPartsFragmentDoc}`;
-export const GetPostsListDocument = gql`
-    query getPostsList {
-  getPostsList {
+    ${SlidesPartsFragmentDoc}`;
+export const GetSlidesListDocument = gql`
+    query getSlidesList {
+  getSlidesList {
     totalCount
     edges {
       node {
@@ -278,21 +275,21 @@ export const GetPostsListDocument = gql`
           extension
         }
         data {
-          ...PostsParts
+          ...SlidesParts
         }
       }
     }
   }
 }
-    ${PostsPartsFragmentDoc}`;
+    ${SlidesPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      getPostsDocument(variables: GetPostsDocumentQueryVariables, options?: C): Promise<{data: GetPostsDocumentQuery, variables: GetPostsDocumentQueryVariables, query: string}> {
-        return requester<{data: GetPostsDocumentQuery, variables: GetPostsDocumentQueryVariables, query: string}, GetPostsDocumentQueryVariables>(GetPostsDocumentDocument, variables, options);
+      getSlidesDocument(variables: GetSlidesDocumentQueryVariables, options?: C): Promise<{data: GetSlidesDocumentQuery, variables: GetSlidesDocumentQueryVariables, query: string}> {
+        return requester<{data: GetSlidesDocumentQuery, variables: GetSlidesDocumentQueryVariables, query: string}, GetSlidesDocumentQueryVariables>(GetSlidesDocumentDocument, variables, options);
       },
-    getPostsList(variables?: GetPostsListQueryVariables, options?: C): Promise<{data: GetPostsListQuery, variables: GetPostsListQueryVariables, query: string}> {
-        return requester<{data: GetPostsListQuery, variables: GetPostsListQueryVariables, query: string}, GetPostsListQueryVariables>(GetPostsListDocument, variables, options);
+    getSlidesList(variables?: GetSlidesListQueryVariables, options?: C): Promise<{data: GetSlidesListQuery, variables: GetSlidesListQueryVariables, query: string}> {
+        return requester<{data: GetSlidesListQuery, variables: GetSlidesListQueryVariables, query: string}, GetSlidesListQueryVariables>(GetSlidesListDocument, variables, options);
       }
     };
   }

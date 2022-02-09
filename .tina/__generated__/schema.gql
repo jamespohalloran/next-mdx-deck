@@ -48,8 +48,8 @@ type Query {
   getDocument(collection: String, relativePath: String): DocumentNode!
   getDocumentList(before: String, after: String, first: Float, last: Float): DocumentConnection!
   getDocumentFields: JSON!
-  getPostsDocument(relativePath: String): PostsDocument!
-  getPostsList(before: String, after: String, first: Float, last: Float): PostsConnection!
+  getSlidesDocument(relativePath: String): SlidesDocument!
+  getSlidesList(before: String, after: String, first: Float, last: Float): SlidesConnection!
 }
 
 type DocumentConnectionEdges {
@@ -75,48 +75,46 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument
+union DocumentNode = SlidesDocument
 
-type Posts {
-  title: String
-  body: String
+type Slides {
+  body: JSON
 }
 
-type PostsDocument implements Node & Document {
+type SlidesDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Posts!
+  data: Slides!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type PostsConnectionEdges {
+type SlidesConnectionEdges {
   cursor: String
-  node: PostsDocument
+  node: SlidesDocument
 }
 
-type PostsConnection implements Connection {
+type SlidesConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Float!
-  edges: [PostsConnectionEdges]
+  edges: [SlidesConnectionEdges]
 }
 
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
-  createPostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
+  updateSlidesDocument(relativePath: String!, params: SlidesMutation!): SlidesDocument!
+  createSlidesDocument(relativePath: String!, params: SlidesMutation!): SlidesDocument!
 }
 
 input DocumentMutation {
-  posts: PostsMutation
+  slides: SlidesMutation
 }
 
-input PostsMutation {
-  title: String
-  body: String
+input SlidesMutation {
+  body: JSON
 }
 
 schema {

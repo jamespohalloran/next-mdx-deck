@@ -1,4 +1,3 @@
-fragment PostsParts on Posts {
-  title
+fragment SlidesParts on Slides {
   body
 }

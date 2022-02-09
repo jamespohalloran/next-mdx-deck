@@ -1,5 +1,5 @@
-query getPostsDocument($relativePath: String!) {
-  getPostsDocument(relativePath: $relativePath) {
+query getSlidesDocument($relativePath: String!) {
+  getSlidesDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -10,13 +10,13 @@ query getPostsDocument($relativePath: String!) {
     }
     id
     data {
-      ...PostsParts
+      ...SlidesParts
     }
   }
 }
 
-query getPostsList {
-  getPostsList {
+query getSlidesList {
+  getSlidesList {
     totalCount
     edges {
       node {
@@ -30,7 +30,7 @@ query getPostsList {
           extension
         }
         data {
-          ...PostsParts
+          ...SlidesParts
         }
       }
     }

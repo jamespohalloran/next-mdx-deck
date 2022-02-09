@@ -8,35 +8,248 @@
   "meta": {},
   "collections": [
     {
-      "label": "Blog Posts",
-      "name": "posts",
-      "path": "content/posts",
+      "label": "Slides",
+      "name": "slides",
+      "format": "mdx",
+      "path": "content/slides",
       "fields": [
         {
-          "type": "string",
-          "label": "Title",
-          "name": "title",
-          "namespace": [
-            "posts",
-            "title"
-          ]
-        },
-        {
-          "type": "string",
-          "label": "Blog Post Body",
+          "label": "Body",
           "name": "body",
           "isBody": true,
-          "ui": {
-            "component": "textarea"
-          },
+          "type": "rich-text",
+          "templates": [
+            {
+              "name": "SlidePage",
+              "label": "Slide Page",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "next",
+                  "label": "next",
+                  "namespace": [
+                    "slides",
+                    "body",
+                    "SlidePage",
+                    "next"
+                  ]
+                },
+                {
+                  "type": "rich-text",
+                  "name": "children",
+                  "label": "children",
+                  "templates": [
+                    {
+                      "name": "Cover",
+                      "label": "Cover",
+                      "fields": [
+                        {
+                          "type": "rich-text",
+                          "name": "children",
+                          "label": "children",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "Cover",
+                            "children"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "Cover"
+                      ]
+                    },
+                    {
+                      "name": "SpeakerNotes",
+                      "label": "Speaker Notes",
+                      "fields": [
+                        {
+                          "type": "rich-text",
+                          "name": "children",
+                          "label": "children",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "SpeakerNotes",
+                            "children"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "SpeakerNotes"
+                      ]
+                    },
+                    {
+                      "name": "cite",
+                      "label": "Cite",
+                      "fields": [
+                        {
+                          "type": "rich-text",
+                          "name": "children",
+                          "label": "children",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "cite",
+                            "children"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "cite"
+                      ]
+                    },
+                    {
+                      "name": "button",
+                      "label": "button",
+                      "fields": [
+                        {
+                          "type": "object",
+                          "name": "style",
+                          "label": "style",
+                          "fields": [],
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "button",
+                            "style"
+                          ]
+                        },
+                        {
+                          "type": "rich-text",
+                          "name": "children",
+                          "label": "children",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "button",
+                            "children"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "button"
+                      ]
+                    },
+                    {
+                      "name": "Steps",
+                      "label": "Steps",
+                      "fields": [
+                        {
+                          "type": "rich-text",
+                          "name": "children",
+                          "label": "children",
+                          "templates": [
+                            {
+                              "name": "Step",
+                              "label": "Step",
+                              "fields": [
+                                {
+                                  "type": "rich-text",
+                                  "name": "children",
+                                  "label": "children",
+                                  "templates": [],
+                                  "namespace": [
+                                    "slides",
+                                    "body",
+                                    "SlidePage",
+                                    "children",
+                                    "Steps",
+                                    "children",
+                                    "Step",
+                                    "children"
+                                  ]
+                                }
+                              ],
+                              "namespace": [
+                                "slides",
+                                "body",
+                                "SlidePage",
+                                "children",
+                                "Steps",
+                                "children",
+                                "Step"
+                              ]
+                            }
+                          ],
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "Steps",
+                            "children"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "Steps"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "slides",
+                    "body",
+                    "SlidePage",
+                    "children"
+                  ]
+                }
+              ],
+              "namespace": [
+                "slides",
+                "body",
+                "SlidePage"
+              ]
+            },
+            {
+              "name": "Step",
+              "label": "Step",
+              "fields": [],
+              "namespace": [
+                "slides",
+                "body",
+                "Step"
+              ]
+            }
+          ],
           "namespace": [
-            "posts",
+            "slides",
             "body"
           ]
         }
       ],
       "namespace": [
-        "posts"
+        "slides"
       ]
     }
   ]
