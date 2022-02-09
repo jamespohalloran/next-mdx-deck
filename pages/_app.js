@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { CurrentSlideProvider } from "../context/CurrentSlideContext";
 import { ModeProvider } from "../context/ModeContext";
 import TransitionPage from "../layouts/TransitionPage";
+import Tina from "../.tina/components/provider";
 
 const theme = {
   colors: {
@@ -16,7 +17,7 @@ const theme = {
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <Tina>
       <MDXProvider>
         <ThemeProvider theme={theme}>
           <CurrentSlideProvider>
@@ -46,6 +47,6 @@ export default function App({ Component, pageProps }) {
           </CurrentSlideProvider>
         </ThemeProvider>
       </MDXProvider>
-    </>
+    </Tina>
   );
 }
