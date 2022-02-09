@@ -51,6 +51,17 @@ export default defineSchema({
                       ],
                     },
                     {
+                      name: "img",
+                      label: "img",
+                      fields: [
+                        {
+                          type: "string",
+                          name: "src",
+                          label: "src",
+                        },
+                      ],
+                    },
+                    {
                       name: "cite",
                       label: "Cite",
                       fields: [

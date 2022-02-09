@@ -92,6 +92,32 @@
                       ]
                     },
                     {
+                      "name": "img",
+                      "label": "img",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "src",
+                          "label": "src",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "img",
+                            "src"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "img"
+                      ]
+                    },
+                    {
                       "name": "cite",
                       "label": "Cite",
                       "fields": [

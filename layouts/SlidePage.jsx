@@ -394,6 +394,7 @@ export default function SlidePage({ children, next }) {
             SpeakerNotes,
             Steps,
             motion,
+            img: (props) => <img src={props.src} />,
             cite: (props) => (
               <cite>
                 <TinaMarkdown components={{}} content={props.children} />
