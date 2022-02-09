@@ -6,7 +6,7 @@ export const Steps = ({ children }) => {
   const renderChildren = () => {
     console.log("render steps ", children);
 
-    return children.children[0].children
+    return (children.children[0].children || [])
       .filter((c) => c.name == "Step")
       .map((item, index) => {
         console.log("item ", item);
