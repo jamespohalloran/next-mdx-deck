@@ -1,8 +1,10 @@
 import React from "react";
+import Step from "./Step";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const Steps = ({ children }) => {
+export const Steps = ({ children, items }) => {
   const renderChildren = () => {
-    return React.Children.map(children, (element, index) => {
+    return (items || []).map((children, index) => {
       return (
         <element.type order={index} {...element.props}>
           {element.props.children}

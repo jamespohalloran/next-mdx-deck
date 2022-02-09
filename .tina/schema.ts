@@ -92,10 +92,10 @@ export default defineSchema({
                               label: "Step",
                               fields: [
                                 {
-                                  type: "rich-text",
-                                  name: "children",
-                                  label: "children",
-                                  templates: [],
+                                  type: "string",
+                                  name: "items",
+                                  label: "items",
+                                  list: true,
                                 },
                               ],
                             },
@@ -106,11 +106,6 @@ export default defineSchema({
                   ],
                 },
               ],
-            },
-            {
-              name: "Step",
-              label: "Step",
-              fields: [],
             },
           ],
         },

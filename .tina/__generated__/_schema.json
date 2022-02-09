@@ -171,10 +171,10 @@
                               "label": "Step",
                               "fields": [
                                 {
-                                  "type": "rich-text",
-                                  "name": "children",
-                                  "label": "children",
-                                  "templates": [],
+                                  "type": "string",
+                                  "name": "items",
+                                  "label": "items",
+                                  "list": true,
                                   "namespace": [
                                     "slides",
                                     "body",
@@ -183,7 +183,7 @@
                                     "Steps",
                                     "children",
                                     "Step",
-                                    "children"
+                                    "items"
                                   ]
                                 }
                               ],
@@ -229,16 +229,6 @@
                 "slides",
                 "body",
                 "SlidePage"
-              ]
-            },
-            {
-              "name": "Step",
-              "label": "Step",
-              "fields": [],
-              "namespace": [
-                "slides",
-                "body",
-                "Step"
               ]
             }
           ],
