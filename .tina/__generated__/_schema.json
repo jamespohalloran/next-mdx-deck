@@ -118,6 +118,58 @@
                       ]
                     },
                     {
+                      "name": "iframe",
+                      "label": "iframe",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "src",
+                          "label": "src",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "src"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "width",
+                          "label": "width",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "width"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "height",
+                          "label": "height",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "height"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "iframe"
+                      ]
+                    },
+                    {
                       "name": "cite",
                       "label": "Cite",
                       "fields": [

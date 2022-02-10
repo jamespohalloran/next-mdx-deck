@@ -217,6 +217,11 @@ const GlobalStyle = createGlobalStyle`
   header span {
     color: var(--text);
   }
+
+  img, iframe {
+    max-width: 60%;
+    max-height: 60%
+  }
 `;
 
 export default function SlidePage({ children, next }) {
@@ -394,7 +399,8 @@ export default function SlidePage({ children, next }) {
             SpeakerNotes,
             Steps,
             motion,
-            img: (props) => <img src={props.src} />,
+            img: (props) => <img {...props} />,
+            iframe: (props) => <iframe {...props} />,
             cite: (props) => (
               <cite>
                 <TinaMarkdown components={{}} content={props.children} />

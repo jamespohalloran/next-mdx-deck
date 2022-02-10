@@ -62,6 +62,27 @@ export default defineSchema({
                       ],
                     },
                     {
+                      name: "iframe",
+                      label: "iframe",
+                      fields: [
+                        {
+                          type: "string",
+                          name: "src",
+                          label: "src",
+                        },
+                        {
+                          type: "string",
+                          name: "width",
+                          label: "width",
+                        },
+                        {
+                          type: "string",
+                          name: "height",
+                          label: "height",
+                        },
+                      ],
+                    },
+                    {
                       name: "cite",
                       label: "Cite",
                       fields: [
