@@ -51,6 +51,38 @@ export default defineSchema({
                       ],
                     },
                     {
+                      name: "img",
+                      label: "img",
+                      fields: [
+                        {
+                          type: "string",
+                          name: "src",
+                          label: "src",
+                        },
+                      ],
+                    },
+                    {
+                      name: "iframe",
+                      label: "iframe",
+                      fields: [
+                        {
+                          type: "string",
+                          name: "src",
+                          label: "src",
+                        },
+                        {
+                          type: "string",
+                          name: "width",
+                          label: "width",
+                        },
+                        {
+                          type: "string",
+                          name: "height",
+                          label: "height",
+                        },
+                      ],
+                    },
+                    {
                       name: "cite",
                       label: "Cite",
                       fields: [
@@ -83,34 +115,16 @@ export default defineSchema({
                       label: "Steps",
                       fields: [
                         {
-                          type: "rich-text",
-                          name: "children",
-                          label: "children",
-                          templates: [
-                            {
-                              name: "Step",
-                              label: "Step",
-                              fields: [
-                                {
-                                  type: "rich-text",
-                                  name: "children",
-                                  label: "children",
-                                  templates: [],
-                                },
-                              ],
-                            },
-                          ],
+                          type: "string",
+                          name: "items",
+                          list: true,
+                          label: "items",
                         },
                       ],
                     },
                   ],
                 },
               ],
-            },
-            {
-              name: "Step",
-              label: "Step",
-              fields: [],
             },
           ],
         },

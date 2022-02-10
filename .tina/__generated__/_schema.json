@@ -92,6 +92,84 @@
                       ]
                     },
                     {
+                      "name": "img",
+                      "label": "img",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "src",
+                          "label": "src",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "img",
+                            "src"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "img"
+                      ]
+                    },
+                    {
+                      "name": "iframe",
+                      "label": "iframe",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "src",
+                          "label": "src",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "src"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "width",
+                          "label": "width",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "width"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "height",
+                          "label": "height",
+                          "namespace": [
+                            "slides",
+                            "body",
+                            "SlidePage",
+                            "children",
+                            "iframe",
+                            "height"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "slides",
+                        "body",
+                        "SlidePage",
+                        "children",
+                        "iframe"
+                      ]
+                    },
+                    {
                       "name": "cite",
                       "label": "Cite",
                       "fields": [
@@ -162,49 +240,17 @@
                       "label": "Steps",
                       "fields": [
                         {
-                          "type": "rich-text",
-                          "name": "children",
-                          "label": "children",
-                          "templates": [
-                            {
-                              "name": "Step",
-                              "label": "Step",
-                              "fields": [
-                                {
-                                  "type": "rich-text",
-                                  "name": "children",
-                                  "label": "children",
-                                  "templates": [],
-                                  "namespace": [
-                                    "slides",
-                                    "body",
-                                    "SlidePage",
-                                    "children",
-                                    "Steps",
-                                    "children",
-                                    "Step",
-                                    "children"
-                                  ]
-                                }
-                              ],
-                              "namespace": [
-                                "slides",
-                                "body",
-                                "SlidePage",
-                                "children",
-                                "Steps",
-                                "children",
-                                "Step"
-                              ]
-                            }
-                          ],
+                          "type": "string",
+                          "name": "items",
+                          "list": true,
+                          "label": "items",
                           "namespace": [
                             "slides",
                             "body",
                             "SlidePage",
                             "children",
                             "Steps",
-                            "children"
+                            "items"
                           ]
                         }
                       ],
@@ -229,16 +275,6 @@
                 "slides",
                 "body",
                 "SlidePage"
-              ]
-            },
-            {
-              "name": "Step",
-              "label": "Step",
-              "fields": [],
-              "namespace": [
-                "slides",
-                "body",
-                "Step"
               ]
             }
           ],

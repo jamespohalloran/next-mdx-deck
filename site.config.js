@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: `@whoisryosuke`,
-  title: `NextJS MDX Deck`,
-  date: `April 22, 2020`,
+  name: `@jamespohalloran`,
+  title: `Git-based Content Management with TinaCMS`,
+  date: `Feb 10, 2022`,
   author: {
-    url: `https://twitter.com/whoisryosuke`,
+    url: `https://twitter.com/jamespohalloran`,
   },
-}
+};
 
-export default siteConfig
+export default siteConfig;

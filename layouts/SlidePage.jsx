@@ -11,6 +11,12 @@ import { useCurrentSlide } from "../context/CurrentSlideContext";
 import { Storage } from "../hooks/useStorage";
 import { MODES } from "../constants/modes";
 
+import Cover from "../components/Cover";
+import SpeakerNotes from "../components/SpeakerNotes";
+import Steps from "../components/Steps";
+import { motion } from "framer-motion";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+
 const GlobalStyle = createGlobalStyle`
   :root {
     --bg: #050505;
@@ -211,6 +217,11 @@ const GlobalStyle = createGlobalStyle`
   header span {
     color: var(--text);
   }
+
+  img, iframe {
+    max-width: 60%;
+    max-height: 60%
+  }
 `;
 
 export default function SlidePage({ children, next }) {
@@ -300,12 +311,12 @@ export default function SlidePage({ children, next }) {
     }
   };
 
-  useEffect(() => {
-    router.push(
-      `${router.pathname}`,
-      `${router.pathname}?mode=${mode}#${currentSlide}`
-    );
-  }, [currentSlide, mode, router.pathname]);
+  // useEffect(() => {
+  //   router.push(
+  //     `${router.pathname}`,
+  //     `${router.pathname}?mode=${mode}#${currentSlide}`
+  //   );
+  // }, [currentSlide, mode, router.pathname]);
 
   useEventListener("keydown", navigate);
 
@@ -321,9 +332,13 @@ export default function SlidePage({ children, next }) {
     let generatorCount = 0;
     let generatedNotes = [];
     // Filter down children by only Slides
-    React.Children.map(children, (child) => {
+
+    console.log("check children", children);
+
+    children.children.map((child) => {
       // Check for <hr> element to separate slides
-      const childType = child && child.props && (child.props.mdxType || []);
+      const childType = child.type;
+
       if (childType && childType.includes("hr")) {
         generatorCount += 1;
         return;
@@ -344,9 +359,10 @@ export default function SlidePage({ children, next }) {
     let generatorCount = 0;
 
     // Filter down children by only Slides
-    React.Children.map(children, (child) => {
+    children.children.map((child) => {
       // Check for <hr> element to separate slides
-      const childType = child && child.props && (child.props.mdxType || []);
+
+      const childType = child.type;
       if (childType && childType.includes("hr")) {
         generatorCount += 1;
         return;
@@ -374,7 +390,27 @@ export default function SlidePage({ children, next }) {
       );
       setSlide(slideCount);
     }
-    return <Slide>{generatedSlides[currentSlide]}</Slide>;
+
+    return (
+      <Slide>
+        <TinaMarkdown
+          components={{
+            Cover,
+            SpeakerNotes,
+            Steps,
+            motion,
+            img: (props) => <img {...props} />,
+            iframe: (props) => <iframe {...props} />,
+            cite: (props) => (
+              <cite>
+                <TinaMarkdown components={{}} content={props.children} />
+              </cite>
+            ),
+          }}
+          content={generatedSlides[currentSlide]}
+        />
+      </Slide>
+    );
   };
 
   return (

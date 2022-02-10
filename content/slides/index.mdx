@@ -1,66 +1,264 @@
-<SlidePage next="page-2">
-    
-<Cover>
+<SlidePage>
+  <Cover>
+    # Git-based Content Management
 
-# NextJS MDX Deck
+    with TinaCMS
 
-Create presentations using Next & React & MDX.
-
-</Cover>
+  </Cover>
 
 ---
 
-1. Clone this project.
-1. Write some MDX.
-1. Export as [static app](https://nextjs.org/docs/advanced-features/static-html-export)
-1. ???
-1. Profit as a speaker 💰💰💰
-
-<SpeakerNotes>
-    
-Private notes here.
-
-You can write an extremely long note and it'll still display inside of the presenter mode.
-
-# Even Markdown!
-
-- Just
-- do
-- it
-
-</SpeakerNotes>
+# I'm James!
 
 ---
 
-> Inscrutable icons litter the face of the devices even though the research
-> community has long demonstrated that people cannot remember the meaning of
-> more than a small number of icons […] Who can remember what each icon
-> means? Not me.
->
-> <cite>Don Norman</cite>
+{" "}
+
+<img src="http://mightypebble.com/wp-content/uploads/2017/03/bots-clear.gif" />
 
 ---
 
-# 🤫
+# Forestry.io
+
+## Founded By Scott Gallant and Jordan Patterson in 2016
+
+"Help people build a better web."
+
+{" "}
+
+<img src="https://forestry.io/img/story-photo.jpg" />
 
 ---
 
-<Steps>
-  <Step>Something</Step>
-  <Step>happens</Step>
-  <Step>one</Step>
-  <Step>by</Step>
-  <Step>one</Step>
-</Steps>
+{" "}
+
+<img src="/img/mightypebble.png" />
 
 ---
 
-## Slides are written in MDX!
+## Forestry.io
 
-And code is highlighted using `react-syntax-highlighter`.
+{" "}
 
-```js
-const variable = someFunction();
-```
+<img src="https://res.cloudinary.com/forestry-io/image/fetch/c_limit,dpr_auto,f_auto,q_80,w_1205/https://forestry.io/uploads/2018/12/draft-post-editor.png" />
+
+---
+
+## CMS' haven't changed a whole lot
+
+{" "}
+
+<img src="https://i0.wp.com/wordpress.org/support/files/2018/10/add-new-post.png?resize=1275%2C876&ssl=1" />
+
+---
+
+## Editors expecting more
+
+---
+
+## What is TinaCMS?
+
+Tina is an open-source Git-backed CMS
+
+{" "}
+
+<img src="https://final-form.github.io/final-form/users/tinacms.svg" />
+
+---
+
+## Tina works with NextJS sites
+
+Support for other React-based sites coming soon
+
+---
+
+## What is NextJS?
+
+### "NextJS is a React framework for production"
+
+Handles routing, code-splitting, Serverside-rendering, static-generation, etc
+
+Very flexible, and unopionated about how you build your site.
+
+---
+
+## TinaCMS
+
+<img src="https://res.cloudinary.com/forestry-demo/image/upload/v1619023278/tina-cms-visual-editing.gif" />
+
+---
+
+## What makes Tina different?
+
+{" "}
+
+<Steps
+  items={[
+    "Visual (Contextual) Editing",
+    "Very extendible",
+    "Works with your Git-based content",
+  ]}
+/>
+
+---
+
+## What's a Git-based CMS?
+
+API-driven vs Git-based
+
+---
+
+## Content files live within the codebase
+
+---
+
+## Sites tend to be generated statically
+
+Static site has its HTML/CSS/JS pre-generated at build-time
+
+Dyanamic sites generate HTML/CSS/JS on the fly
+
+---
+
+## Benefits of Git-backed content
+
+{" "}
+
+<Steps
+  items={[
+    "Ownership over content",
+    "Don't need to maintain a database",
+    "Works great with open-source",
+    "Branches",
+    "Easy to work on site locally",
+    "Version Controlled!",
+  ]}
+/>
+
+---
+
+## Limitations of Git-backed content
+
+{" "}
+
+<Steps
+  items={[
+    "Can't handle relational content",
+    "Performance on larger datasets",
+    "Static content often needs a full-rebuild to apply new changes",
+  ]}
+/>
+
+---
+
+## Tina puts your git-based content behind a GraphQL API
+
+{" "}
+
+<Steps
+  items={[
+    "✅ Handles relational content",
+    "(WIP) Performance on larger datasets",
+    "✅ Static content often needs a full-rebuild to apply new changes",
+  ]}
+/>
+
+---
+
+## Tina's GraphQL layer
+
+{" "}
+
+<img src="https://res.cloudinary.com/forestry-demo/image/upload/v1642520508/graphql-query-example.png" />
+
+---
+
+## Tina's GraphQL layer
+
+Run locally via Tina's CLI which sync with your locally files
+
+Hosted version available which syncs with GitHub
+
+---
+
+## Content modelling with Tina
+
+{" "}
+
+<img src="/img/schema.png" />
+
+---
+
+## Relational Content
+
+{" "}
+
+<iframe
+  src="https://tina-gql-playground.vercel.app/iframe/reference"
+  width="100%"
+  height="700px"
+/>
+
+---
+
+## Performance on larger datasets: Tina Cloud's data-layer
+
+{" "}
+
+<img src="https://tina.io/img/cloud-dashboard.png" />
+
+---
+
+## "Static content often needs a full-rebuild to apply new changes"
+
+### No longer an issue thanks to:
+
+{" "}
+
+<Steps items={["Incremental Static Regeneration (ISR)", "Read-only tokens"]} />
+
+---
+
+## Incremental Static Regeneration (ISR)
+
+Feature in NextJS
+
+Allows your pages to be generated dynamically as-needed.
+
+---
+
+- Run at build-time (statically) and at run-time (serverside rendering)
+
+{" "}
+
+<img src="/img/isr-next.png" />
+
+---
+
+# ISR with Tina
+
+At build time, generate pages from local files
+
+At runtime time, generate pages from Tina's content API (through GitHub)
+
+---
+
+## This slideshow brought to you by TinaCMS
+
+Theme by: @whoisryosuke
+
+---
+
+## Thank you!
+
+https://johalloran.dev
+
+https://tina.io
+
+{" "}
+
+<img src="https://mightypebble.com/wp-content/uploads/2015/08/SelfAvatar307.png" />
+
+---
 
 </SlidePage>
