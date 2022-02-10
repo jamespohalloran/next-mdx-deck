@@ -96,13 +96,15 @@ Very flexible, and unopionated about how you build your site.
   items={[
     "Visual (Contextual) Editing",
     "Very extendible",
-    "Works with your Git-backed content",
+    "Works with your Git-based content",
   ]}
 />
 
 ---
 
-## What's a Git-based content management system?
+## What's a Git-based CMS?
+
+API-driven vs Git-based
 
 ---
 
@@ -111,6 +113,10 @@ Very flexible, and unopionated about how you build your site.
 ---
 
 ## Sites tend to be generated statically
+
+Static site has its HTML/CSS/JS pre-generated at build-time
+
+Dyanamic sites generate HTML/CSS/JS on the fly
 
 ---
 
@@ -152,7 +158,7 @@ Very flexible, and unopionated about how you build your site.
 <Steps
   items={[
     "✅ Handles relational content",
-    "Performance on larger datasets",
+    "(WIP) Performance on larger datasets",
     "✅ Static content often needs a full-rebuild to apply new changes",
   ]}
 />
@@ -169,8 +175,9 @@ Very flexible, and unopionated about how you build your site.
 
 ## Tina's GraphQL layer
 
-- Run locally via Tina's CLI which sync with your locally files
-- Hosted version available which syncs with GitHub
+Run locally via Tina's CLI which sync with your locally files
+
+Hosted version available which syncs with GitHub
 
 ---
 
@@ -214,8 +221,9 @@ Very flexible, and unopionated about how you build your site.
 
 ## Incremental Static Regeneration (ISR)
 
-- Feature in NextJS
-- Allows your pages to be generated dynamically as-needed.
+Feature in NextJS
+
+Allows your pages to be generated dynamically as-needed.
 
 ---
 
@@ -229,8 +237,9 @@ Very flexible, and unopionated about how you build your site.
 
 # ISR with Tina
 
-- At build time, generate pages from local files
-- At runtime time, generate pages from Tina's content API (through GitHub)
+At build time, generate pages from local files
+
+At runtime time, generate pages from Tina's content API (through GitHub)
 
 ---
 
