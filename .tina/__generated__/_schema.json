@@ -240,48 +240,17 @@
                       "label": "Steps",
                       "fields": [
                         {
-                          "type": "rich-text",
-                          "name": "children",
-                          "label": "children",
-                          "templates": [
-                            {
-                              "name": "Step",
-                              "label": "Step",
-                              "fields": [
-                                {
-                                  "type": "rich-text",
-                                  "name": "children",
-                                  "label": "children",
-                                  "namespace": [
-                                    "slides",
-                                    "body",
-                                    "SlidePage",
-                                    "children",
-                                    "Steps",
-                                    "children",
-                                    "Step",
-                                    "children"
-                                  ]
-                                }
-                              ],
-                              "namespace": [
-                                "slides",
-                                "body",
-                                "SlidePage",
-                                "children",
-                                "Steps",
-                                "children",
-                                "Step"
-                              ]
-                            }
-                          ],
+                          "type": "string",
+                          "name": "items",
+                          "list": true,
+                          "label": "items",
                           "namespace": [
                             "slides",
                             "body",
                             "SlidePage",
                             "children",
                             "Steps",
-                            "children"
+                            "items"
                           ]
                         }
                       ],
